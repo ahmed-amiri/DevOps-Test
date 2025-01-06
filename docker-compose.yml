@@ -21,7 +21,7 @@ services:
       - mysql
     networks:
       - app-network
-    command: ["java", "-jar", "/app.jar"]  # Start the backend directly without wait-for-it.sh
+    command: ["java", "-jar", "/app.jar"]
 
   mysql:
     image: mysql:8.0
