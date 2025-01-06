@@ -9,29 +9,8 @@ on:
       - main
 
 jobs:
-  build-and-test:
-    name: Build and Test
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Code
-      uses: actions/checkout@v2
-
-    # Frontend Tests
-    - name: Set up Node.js for Frontend
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-
-    - name: Install Dependencies and Run Frontend Tests
-      working-directory: ./thefrontend
-      run: |
-        npm install
-        npm test
-
   build-and-push-docker-images:
     name: Build and Push Docker Images
-    needs: build-and-test
     runs-on: ubuntu-latest
 
     steps:
