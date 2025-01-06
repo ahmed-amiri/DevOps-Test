@@ -83,15 +83,3 @@ GitHub Actions:
 - Docker images are built, pushed to Docker Hub, and deployed using Docker Compose.
 
 ---
-
-## **Tools and Technologies Used**
-
-- **Docker**: Containerization platform for packaging applications and dependencies.
-- **Docker Compose**: Tool to define and run multi-container Docker applications.
-- **GitHub Actions**: CI/CD tool for automating workflows.
-- **Angular**: Frontend framework for building dynamic web applications.
-- **Spring Boot**: Backend framework for building microservices.
-- **MySQL**: Relational database service for data storage.
-- **Node.js**: JavaScript runtime environment for running the frontend.
-
----
