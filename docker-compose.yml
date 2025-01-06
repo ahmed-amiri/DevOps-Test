@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  thefrontend:
+    build: ./thefrontend
+    ports:
+      - "80:80"
+    depends_on:
+      - thebackend
+
+  thebackend:
+    build: ./thebackend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: springjwt
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
