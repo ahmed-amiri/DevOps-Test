@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   build-and-test:
     name: Build and Test
@@ -22,10 +23,10 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-
     - name: Grant execute permission to mvnw
       run: chmod +x ./thebackend/mvnw
-
+    - name: Set Spring Profile to Prod 
+      run: echo "SPRING_PROFILES_ACTIVE=prod" >> $GITHUB_ENV
     - name: Run Backend Tests
       working-directory: ./thebackend
       run: |
